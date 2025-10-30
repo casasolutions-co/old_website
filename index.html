@@ -241,26 +241,23 @@ const menuToggle = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.navbar__menu');
 const dropdownParents = document.querySelectorAll('.navbar__item.dropdown');
 
-// Toggle mobile menu visibility
 menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('is-active');
   navMenu.classList.toggle('active');
 });
 
-// Handle dropdown toggling
 dropdownParents.forEach(parent => {
   const parentLink = parent.querySelector('a.navbar__links');
-  
-  parentLink.addEventListener('click', (e) => {
-    // On desktop: let it work normally
-    if (window.innerWidth > 768) return;
 
-    // On mobile: toggle dropdown menu instead of following link
-    e.preventDefault();
-    parent.classList.toggle('open');
+  parentLink.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault(); // stops following /solutions.html on first tap
+      parent.classList.toggle('open');
+    }
   });
 });
 </script>
+
 
 
 </body>

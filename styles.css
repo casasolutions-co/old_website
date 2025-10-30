@@ -207,6 +207,10 @@ a {
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .navbar__menu.active {
@@ -236,14 +240,19 @@ a {
     position: static;
     box-shadow: none;
     border-radius: 0;
-    padding: 0;
-      max-height: 250px; /* adjust if needed */
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+    padding: 6px 0;
+    max-height: calc(100vh - 160px); 
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+    touch-action: pan-y;
   }
 }
 
+.dropdown-menu li a {
+  white-space: normal;
+  word-break: break-word;
+}
 
 .navbar__toggle.is-active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
