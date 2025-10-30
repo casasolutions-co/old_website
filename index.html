@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASA Educational Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="images/1.png" alt="CASA Educational Solutions Logo">
+      </a>
+      
+      <!-- Mobile menu toggle -->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      
+      <!-- Menu items -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="/aboutus.html" class="navbar__links">About Us</a></li>
+        <li class="navbar__item dropdown">
+          <a href="/solutions.html" class="navbar__links">Our Solutions ▾</a>
+          <ul class="dropdown-menu">
+          <li><a href="/study-solutions.html">StudyMatch AI</a></li>
+          <li><a href="/unistay.html">UniStay</a></li>
+          <li><a href="/ausbildung-students.html">Ausbildung</a></li>
+          <li><a href="/ausbildung-b2b.html">Ausbildung B2B</a></li>
+          </ul>
+          </li>
+
+        <li class="navbar__btn"><a href="/login.html" class="button">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="main">
+    <div class="main__container">
+      <!-- Hero Text -->
+      <div class="main__content">
+        <h1>The One-Stop-Shop Where Your German Dream Begins</h1>
+        <p>From eligibility checks to accommodation and visa guidance, we simplify your journey to Germany.</p>
+        <a href="https://cal.com/casasolutions/30min" class="main__btn">Talk to an Advisor</a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="main__img--container">
+        <img src="images/hero.svg" alt="Students studying in Germany" id="hero-img">
+      </div>
+    </div>
+  </div> <!-- ✅ closed hero -->
+
+  <!-- Our Solutions Section -->
+  <section class="services" id="services">
+    <h2>Our Solutions</h2>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>StudyMatch AI</h3>
+        <p>An AI-powered tool that helps you check your eligibility, match with the right universities in Germany, and get real-time answers to your study questions.</p>
+        <a href="/studymatch.html" class="btn">Check My Eligibility</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Language and Integration</h3>
+        <p>Tailored German language courses and cultural integration support to help you adapt smoothly to life, studies, and work in Germany.</p>
+        <a href="https://api.whatsapp.com/send/?phone=4917686347176&text&type=phone_number&app_absent=0&wame_ctl=1" class="btn">Start Learning</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Ausbildung</h3>
+        <p>Tailored German language courses and cultural integration support to help you adapt smoothly to life, studies, and work in Germany.</p>
+        <a href="/ausbildung-students.html" class="btn">Apply Now</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Visa Assistance</h3>
+        <p>Step-by-step guidance for your student visa application, from document preparation to embassy appointments, making the process stress-free.</p>
+        <a href="https://api.whatsapp.com/send/?phone=4917686347176&text&type=phone_number&app_absent=0&wame_ctl=1" class="btn">Get Visa Help</a>
+      </div>
+
+      <div class="service-card">
+        <h3>UniStay</h3>
+        <p>Affordable and reliable student housing solutions, helping you secure safe, comfortable, and well-located accommodations in Germany.</p>
+        <a href="/unistay.html" class="btn">Find Housing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fintiba Section -->
+    <section class="fintiba-section">
+  <div class="fintiba-container">
+    <!-- Text Column -->
+    <div class="fintiba-text">
+      <h2>German Blocked Account with Fintiba</h2>
+      <p>
+        Open your blocked account online with Fintiba, trusted and recognized by German authorities.
+        Fast, secure and tailored for international students.
+      </p>
+      <!-- note: span needed so text stays above the animated background -->
+      <a
+        class="fintiba-btn"
+        href="https://partner.fintiba.com/casaconsultancy"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open blocked account with Fintiba"
+      >
+        <span>Open Your Blocked Account Now</span>
+      </a>
+    </div>
+
+    <!-- Image Column -->
+    <div class="fintiba-image" aria-hidden="true">
+      <img src="/images/bank1.svg" alt="Fintiba blocked account" />
+    </div>
+  </div>
+</section>
+
+ <!-- CASA Google Reviews -->
+<section id="reviews-banner1">
+    <div class="tagembed-widget" 
+        style="width:100%;height:100%;overflow:auto;" 
+        data-widget-id="303671" 
+        data-website="1">
+    </div>
+    <script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
+</section>
+
+
+<!-- Contact Form Section -->
+<section class="contact-section">
+  <div class="contact-container">
+    <h2> Take a step forward towards your future</h2>
+    <form action="https://formspree.io/f/xldonynj" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">WhatsApp</label>
+        <input type="WhatsApp" id="WhatsApp" name="WhatsApp" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-section company-info">
+      <h4>CASA Solutions</h4>
+      <p>Hallstraße 1a<br>92318 Neumarkt in der Oberpfalz, Germany</p>
+      <p>Tel: +49 179 1449246<br>Email: info@casa-consultancy.com</p>
+    </div>
+
+    <!-- For Students -->
+    <div class="footer-section">
+      <h4>For Students</h4>
+      <ul>
+        <li><a href="/refer-and-earn.html">Refer and Earn</a></li>
+        <li><a href="/ambassador.html">Become an Ambassador</a></li>
+        <li><a href="/success-stories.html">Success Stories</a></li>
+        <li><a href="/careers.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <!-- For Companies -->
+    <div class="footer-section">
+      <h4>For Companies and Institutions</h4>
+      <ul>
+        <li><a href="/become-agent.html">Become an Agent</a></li>
+        <li><a href="/partner.html">Partner with Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal Links -->
+    <div class="footer-section legal-links">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/imprint.html">Imprint</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Trust -->
+    <div class="footer-section social-trust">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/casasolutions/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/casasolutions.de" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="http://www.youtube.com/@casa.solutions" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      <div class="trust-badge">
+        <img src="/images/icef.png" alt="ICEF Agent Accredited">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CASA Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
