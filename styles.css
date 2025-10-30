@@ -48,7 +48,7 @@ a {
   top: 0;
   z-index: 999;
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .navbar__container {
@@ -86,6 +86,9 @@ a {
   padding: 0 1rem;
   height: 100%;
   transition: color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar__links:hover {
@@ -117,7 +120,6 @@ a {
 }
 
 /* Dropdown Menu */
-/* Ensure dropdown parent positions correctly */
 .navbar__item.dropdown {
   position: relative;
 }
@@ -136,7 +138,6 @@ a {
   z-index: 999;
 }
 
-/* Dropdown Menu Items */
 .dropdown-menu li a {
   display: block;
   padding: 12px 20px;
@@ -149,32 +150,20 @@ a {
   border-radius: 8px;
 }
 
-/* Hover Effect */
 .dropdown-menu li a:hover {
-  background-color: #fff; /* slightly darker purple */
+  background-color: #fff;
   padding-left: 25px;
 }
 
-/* Show Dropdown on Hover */
+/* Show Dropdown on Hover (desktop) */
 .navbar__item.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Pointer cursor for parent link */
-.navbar__links {
-  cursor: pointer;
-  text-decoration: none;
-  color: #6439FF;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Optional: arrow animation when hovering */
 .navbar__item.dropdown:hover .navbar__links {
   opacity: 0.9;
 }
 
-
-/* Mobile toggle */
 /* Mobile toggle (hamburger icon) */
 .navbar__toggle {
   display: none;
@@ -190,7 +179,7 @@ a {
   background-color: #6439FF;
 }
 
-/* Show toggle on mobile screens */
+/* MOBILE VIEW */
 @media screen and (max-width: 768px) {
   .navbar__toggle {
     display: block;
@@ -198,19 +187,20 @@ a {
 
   .navbar__menu {
     display: none;
-    position: absolute;
+    position: fixed; /* fix iPhone Safari scroll issue */
     top: 80px;
+    left: 0;
     right: 0;
+    bottom: 0;
     background-color: #fff;
-    width: 100%;
     flex-direction: column;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    max-height: calc(100vh - 80px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; /* enable smooth scroll on iOS */
     overscroll-behavior: contain;
+    z-index: 999;
   }
 
   .navbar__menu.active {
@@ -227,13 +217,13 @@ a {
     width: 100%;
   }
 
-  /* Dropdown on mobile */
+  /* Dropdown on mobile (tap-to-toggle) */
   .navbar__item.dropdown:hover .dropdown-menu {
-    display: none; /* Disable hover on mobile */
+    display: none; /* disable hover */
   }
 
   .navbar__item.dropdown.open .dropdown-menu {
-    display: block; /* Toggle when clicked */
+    display: block; /* show when clicked */
   }
 
   .dropdown-menu {
@@ -243,6 +233,7 @@ a {
     padding: 6px 0;
     max-height: calc(100vh - 160px); 
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: #ccc transparent;
     touch-action: pan-y;
@@ -254,6 +245,7 @@ a {
   word-break: break-word;
 }
 
+/* Burger animation */
 .navbar__toggle.is-active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -266,6 +258,17 @@ a {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Prevent background scroll when menu is open */
+body.menu-open {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+}
 
 /* ===================== */
 /* Hero Section          */
