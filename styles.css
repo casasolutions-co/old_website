@@ -175,14 +175,83 @@ a {
 
 
 /* Mobile toggle */
+/* Mobile toggle (hamburger icon) */
 .navbar__toggle {
-  display: none; /* hidden by default */
+  display: none;
   cursor: pointer;
 }
 
-.navbar__toggle .bar {
-  display: none;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  background-color: #6439FF;
 }
+
+/* Show toggle on mobile screens */
+@media screen and (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .navbar__item {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .navbar__links {
+    display: block;
+    width: 100%;
+  }
+
+  /* Dropdown on mobile */
+  .navbar__item.dropdown:hover .dropdown-menu {
+    display: none; /* Disable hover on mobile */
+  }
+
+  .navbar__item.dropdown.open .dropdown-menu {
+    display: block; /* Toggle when clicked */
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+.navbar__toggle.is-active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.is-active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 
 /* ===================== */
 /* Hero Section          */
@@ -452,22 +521,24 @@ a {
   }
 }
 
-/* ======= Fintiba Section (improved) ======= */
+/* ======= Fintiba Section (Responsive + Polished) ======= */
 :root {
-  /* use your existing brand variables; fallback included */
   --color-primary: #6439FF;
   --color-secondary: #4F75FF;
 }
 
-/* global box-sizing (helps avoid layout quirks) */
-.fintiba-section, .fintiba-section * { box-sizing: border-box; }
+/* Ensure consistent sizing */
+.fintiba-section,
+.fintiba-section * {
+  box-sizing: border-box;
+}
 
 .fintiba-section {
   padding: 50px 20px;
-  background: var(--color-primary); /* subtle separation from footer */
+  background: var(--color-primary);
 }
 
-/* container: flexible two-column with sensible min-widths */
+/* Container layout */
 .fintiba-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -478,9 +549,9 @@ a {
   flex-wrap: wrap;
 }
 
-/* Text column (left on desktop) */
+/* Text column */
 .fintiba-text {
-  flex: 1 1 480px; /* will grow/shrink but keep ~480px preferred */
+  flex: 1 1 480px;
   min-width: 260px;
   order: 1;
 }
@@ -500,9 +571,9 @@ a {
   max-width: 60ch;
 }
 
-/* Image column (right on desktop) */
+/* Image column */
 .fintiba-image {
-  flex: 0 0 420px; /* fixed-ish slot on larger screens */
+  flex: 0 0 420px;
   min-width: 200px;
   order: 2;
   text-align: center;
@@ -518,7 +589,7 @@ a {
   display: inline-block;
 }
 
-/* CTA button with "border -> fill" animation using ::before */
+/* CTA button */
 .fintiba-btn {
   position: relative;
   display: inline-block;
@@ -530,11 +601,11 @@ a {
   font-weight: 600;
   text-decoration: none;
   overflow: hidden;
-  transition: color .28s ease, border-color .28s ease;
+  transition: color 0.28s ease, border-color 0.28s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* the animated filling background */
+/* Animated fill background */
 .fintiba-btn::before {
   content: "";
   position: absolute;
@@ -542,31 +613,102 @@ a {
   background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform .35s cubic-bezier(.2,.9,.2,1);
-  z-index: 0; /* behind the link text */
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1);
+  z-index: 0;
 }
 
-/* keep the text above the pseudo background */
 .fintiba-btn > span {
   position: relative;
   z-index: 1;
   display: inline-block;
 }
 
-/* accessible focus ring */
+/* Hover and focus */
+.fintiba-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.fintiba-btn:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
 .fintiba-btn:focus-visible {
   outline: 3px solid rgba(100, 57, 255, 0.18);
   outline-offset: 3px;
   border-color: transparent;
 }
 
-/* respect prefers-reduced-motion */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .fintiba-btn::before,
   .fintiba-btn {
     transition: none !important;
   }
-  .fintiba-btn::before { transform: scaleX(1); }
+  .fintiba-btn::before {
+    transform: scaleX(1);
+  }
+}
+
+/* ======= Mobile adjustments ======= */
+@media screen and (max-width: 768px) {
+  .fintiba-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .fintiba-text {
+    order: 1;
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .fintiba-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .fintiba-text p {
+    font-size: 0.95rem;
+    max-width: 90%;
+    margin: 0 auto 20px auto;
+  }
+
+  .fintiba-image {
+    order: 2;
+    flex: 1 1 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .fintiba-image img {
+    width: 85%;
+    max-width: 320px;
+    height: auto;
+    max-height: none;
+    object-fit: contain; /* prevents cropping */
+    border-radius: 10px;
+  }
+
+  .fintiba-btn {
+    width: auto;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+  .fintiba-image img {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .fintiba-text h2 {
+    font-size: 1.2rem;
+  }
 }
 
 /* RESPONSIVE: stack on narrower screens, image first for mobile UX */
@@ -1285,23 +1427,29 @@ a {
   left: -8px;
 }
 
-/* Responsive */
+/* Responsive fix for mobile */
 @media screen and (max-width: 768px) {
   .timeline::after {
-    left: 10px;
+    left: 20px;
   }
+
   .timeline-item {
     width: 100%;
-    padding-left: 40px;
-    padding-right: 25px;
+    padding-left: 50px;
+    padding-right: 0;
+    left: 0 !important; /* Reset desktop positioning */
   }
+
   .timeline-item .timeline-content {
     margin-bottom: 30px;
   }
+
   .timeline-item .timeline-content::before {
-    left: -28px;
+    left: -30px !important;
+    right: auto;
   }
 }
+
 /* General Layout */
 .select-city {
     background-color: #6439FF;

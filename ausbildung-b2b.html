@@ -220,6 +220,26 @@
   </div>
 </footer>
 
+<script>
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.navbar__menu');
+const dropdownParents = document.querySelectorAll('.navbar__item.dropdown');
 
+// Toggle menu visibility
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('is-active');
+  navMenu.classList.toggle('active');
+});
+
+// Toggle dropdowns on mobile
+dropdownParents.forEach(parent => {
+  parent.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      parent.classList.toggle('open');
+    }
+  });
+});
+</script>
 </body>
 </html>
