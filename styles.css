@@ -237,8 +237,13 @@ a {
     box-shadow: none;
     border-radius: 0;
     padding: 0;
+      max-height: 250px; /* adjust if needed */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
   }
 }
+
 
 .navbar__toggle.is-active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
