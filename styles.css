@@ -2286,3 +2286,305 @@ body {
     text-align: left;
   }
 }
+
+/* Referral Program */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* GENERAL BUTTON */
+.btn {
+  background: #6439ff;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  border: 2px solid white; /* added */
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: #6439ff;
+  border-color: #6439ff;
+}
+
+/* HERO SECTION */
+.hero {
+  background: #6439ff;
+  padding: 120px 40px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+}
+
+/* SECTION 2 */
+
+.benefits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 120px; 
+  background: white;
+  color: #6439ff;
+  width: 100%;
+}
+
+
+.benefits-left {
+  width: 50%;
+}
+
+.benefits-left h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.benefits-left ul {
+  margin-top: 20px;
+  padding-left: 18px;
+  font-size: 18px;
+  color: #333;
+}
+.benefits-left p {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #333;
+}
+
+.no-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.benefits-right img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+}
+
+/* SECTION 3 */
+.how-it-works {
+  background: #6439ff;
+  padding: 80px 40px;
+  color: white;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: white;
+  color: #6439ff;
+  width: 300px;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+/* ========== SECTION 4 ========== */
+.community {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7f4ff 60%,
+    #f7f4ff 80%,
+    #ffffff 100%
+  );
+  color: #6439ff;
+}
+
+.community h2 {
+  font-size: 2rem;
+  max-width: 750px;
+  margin: 0 auto 40px;
+  font-weight: 600;
+}
+
+.community-image {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.community-image img {
+  width: 100%;
+  max-width: 850px;
+  filter: drop-shadow(0px 20px 40px rgba(100, 57, 255, 0.15));
+}
+
+/* CTA Button */
+.community .btn {
+  display: inline-block;
+  background: #6439ff;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 2px solid #6439ff;
+}
+
+.community .btn:hover {
+  background: white;
+  color: #6439ff;
+}
+
+/* ------ Responsive ------ */
+@media (max-width: 600px) {
+  .community {
+    padding: 60px 15px;
+  }
+
+  .community h2 {
+    font-size: 1.6rem;
+  }
+
+  .community-image {
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* ---------------------------- */
+/* RESPONSIVE BREAKPOINTS */
+/* ---------------------------- */
+
+/* TABLET */
+@media (max-width: 992px) {
+
+  /* HERO */
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  /* SECTION 2 */
+  .benefits {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .benefits-left,
+  .benefits-right {
+    width: 100%;
+  }
+
+  .benefits-left ul {
+    text-align: left;
+  }
+
+  /* SECTION 3 */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  /* SECTION 4 CURVES */
+  .curves-container {
+    height: 200px;
+  }
+
+  .curve {
+    height: 180px;
+  }
+
+  .person-img {
+    width: 90px;
+    height: 90px;
+    top: 50px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  /* HERO */
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* SECTION 2 */
+  .benefits {
+    padding: 60px 20px;
+  }
+
+  .benefits-left h2 {
+    font-size: 26px;
+  }
+
+  .benefits-right img {
+    max-width: 100%;
+  }
+
+  /* SECTION 4 CURVES → simplify for mobile */
+  .curves-container {
+    height: 140px;
+  }
+
+  .curve,
+  .curve-left,
+  .curve-right {
+    display: none; /* hide curves on very small screens for clean layout */
+  }
+
+  .person-img {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    margin: 0 15px;
+  }
+}
