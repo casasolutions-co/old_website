@@ -2391,6 +2391,8 @@ body {
   justify-content: center;
   gap: 30px;
   margin-top: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
 }
 
 .card {
